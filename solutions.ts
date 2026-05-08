@@ -24,7 +24,7 @@ const checkType = (value: StringOrNumber): string => {
     return "Number";
   }
 
-  return "kono tai hoi nai";
+  return "Unknown";
 };
 
 const output1 = checkType("Hello");
@@ -50,16 +50,18 @@ console.log(result4);
 interface Book {
   title: string;
   author: string;
+  publishedYear: number;
+  isRead?: boolean;
 }
 
-const toggleReadStatus = (obj: Book) => {
+const toggleReadStatus = (obj: Book): Book => {
   return {
     ...obj,
     isRead: true,
   };
 };
 
-const bookInfo = {
+const bookInfo: Book = {
   title: "TypeScript Guide",
   author: "Jane Doe",
   publishedYear: 2024,
@@ -67,7 +69,7 @@ const bookInfo = {
 };
 
 const result5 = toggleReadStatus(bookInfo);
-
+console.log(result5);
 //==========Problem-6===========
 
 class Person {
